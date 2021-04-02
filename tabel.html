@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="description"
+      content="ESP8266 Weather Station Web Application"
+    />
+    <meta name="author" content="Tri Rizeki Rifandani" />
+
+    <title>Weather Station | Tabel</title>
+
+    <!-- Custom fonts for this template-->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+
+    <!-- Icons-->
+    <link rel="icon" sizes="32x32" href="img/icons/icon-32x32.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="32x32"
+      href="img/icons/icon-32x32.png"
+    />
+    <link rel="icon" sizes="128x128" href="img/icons/icon-128x128.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="128x128"
+      href="img/icons/icon-128x128.png"
+    />
+    <link rel="icon" sizes="144x144" href="img/icons/icon-144x144.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="img/icons/icon-144x144.png"
+    />
+    <link rel="icon" sizes="152x152" href="img/icons/icon-152x152.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/icons/icon-152x152.png"
+    />
+    <link rel="icon" sizes="192x192" href="img/icons/icon-192x192.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="img/icons/icon-192x192.png"
+    />
+    <link rel="icon" sizes="256x256" href="img/icons/icon-256x256.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="256x256"
+      href="img/icons/icon-256x256.png"
+    />
+    <link rel="icon" sizes="512x512" href="img/icons/icon-512x512.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="512x512"
+      href="img/icons/icon-512x512.png"
+    />
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Datatable CSS -->
+    <link
+      href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Datatable JS -->
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.print.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.colVis.min.js"
+    ></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -------------------------------------------------------------------------------------------------------------------------------------->
+      <ul
+        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+      >
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="index.html"
+        >
+          <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3">Weather Station</div>
+        </a>
+
+        <!-- Divider ---->
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Nav Item - Home -->
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            <i class="fas fa-fw fa-home"></i>
+            <span>Home</span></a
+          >
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">Pages</div>
+
+        <!-- Nav Item - Tables -->
+        <li class="nav-item active">
+          <a
+            class="nav-link"
+            href="https://rifandani2505.000webhostapp.com/tabel.html"
+          >
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a
+          >
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block" />
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+          <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      <!-- End of Sidebar -------------------------------------------------------------------------------------------------------------------------------------->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column mt-4">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- Page Heading -->
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800">Tabel</h1>
+            </div>
+
+            <!-- Tabel Row ---------------------------------------------------------------------------------------------->
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="card shadow mb-4 border-bottom-primary">
+                  <!-- Card Header - Dropdown -->
+                  <div
+                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                  >
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Data Sensor
+                    </h6>
+                    <div class="dropdown no-arrow">
+                      <a
+                        class="dropdown-toggle"
+                        href="#"
+                        role="button"
+                        id="dropdownMenuLink"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i
+                          class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"
+                        ></i>
+                      </a>
+                      <div
+                        class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                        aria-labelledby="dropdownMenuLink"
+                      >
+                        <div class="dropdown-header">
+                          ESP8266 Weather Station
+                        </div>
+                        <a class="dropdown-item" href="#">DataTable JS</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Card Header - Dropdown -->
+
+                  <!-- Card Body -->
+                  <div class="card-body">
+                    <div class="chart-area">
+                      <!-- Table ----------------------------->
+                      <table
+                        id="empTable"
+                        class="dataTable table-hover table-striped"
+                        style="width: 100%"
+                      >
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>BMP280 Temperatur (&#8451;)</th>
+                            <th>Altitude (m)</th>
+                            <th>Tekanan (hPa)</th>
+                            <th>Heat Index (&#8451;)</th>
+                            <th>Kelembaban (%)</th>
+                            <th>DHT11 Temperatur (&#8451;)</th>
+                            <th>Iluminasi (lumen/m<sup>2</sup>)</th>
+                            <th>InfraRed (1/0)</th>
+                            <th>Date-Time</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- End Card Body -->
+                </div>
+              </div>
+            </div>
+            <!-- End Tabel -->
+          </div>
+          <!-- container-fluid wrapper -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>&copy; Tri Rizeki Rifandani | 2020</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Table Script ------------------------------------------------------------------->
+    <script>
+      $(document).ready(function () {
+        var dataTable = $('#empTable').DataTable({
+          // pageLength: 60,
+          lengthMenu: [
+            [10, 60, 100, 600, 1000, 6000],
+            [
+              '10 rows',
+              '60 rows',
+              '100 rows',
+              '600 rows',
+              '1000 rows',
+              '6000 rows',
+            ],
+          ],
+          processing: true,
+          serverSide: true,
+          serverMethod: 'post',
+          //'searching': false, // Remove default Search Control
+          ajax: {
+            url: 'ajaxfile.php',
+          },
+          columns: [
+            { data: 'id' },
+            { data: 'value1' },
+            { data: 'value2' },
+            { data: 'value3' },
+            { data: 'value4' },
+            { data: 'value5' },
+            { data: 'value6' },
+            { data: 'value7' },
+            { data: 'value8' },
+            { data: 'reading_time' },
+          ],
+          dom: 'Bfrtip', // default lfrtip , ada juga Bfrtip , <"wrapper"flipt>, <"top"i>rt<"bottom"flp><"clear">
+          buttons: [
+            'colvis',
+            'pageLength',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5',
+            'print',
+          ],
+        });
+      });
+    </script>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+  </body>
+</html>
